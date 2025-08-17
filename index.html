@@ -16,27 +16,64 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <div class="logo logo__icon"></div>
-        <div class="logo logo__text"></div>
+      <div class="header__content wrapper">
+        <div class="logo">
+          <div class="logo logo__icon"></div>
+          <div class="logo logo__text"></div>
+        </div>
+        <button class="theme-btn">
+          <!-- make this change in JS -->
+          <img src="assets/images/icon-sun.svg" />
+        </button>
       </div>
-      <button class="theme-button">
-        <!-- make this change in JS -->
-        <img src="assets/images/icon-sun.svg" />
-      </button>
     </header>
     <main>
       <section class="extensions">
-        <div class="filter-bar">
-          <h1 class="filter__title">Extensions List</h1>
-          <div class="buttons-container">
-            <button class="filter__btn active--btn">All</button>
-            <button class="filter__btn">Active</button>
-            <button class="filter__btn">Inactive</button>
+        <div class="extensions__content wrapper">
+          <div class="filter-bar">
+            <h1 class="filter__title">Extensions List</h1>
+            <div class="buttons-container">
+              <button class="filter__btn active--btn">All</button>
+              <button class="filter__btn">Active</button>
+              <button class="filter__btn">Inactive</button>
+            </div>
+          </div>
+          <div class="extensions__grid">
+            <div class="extensions__extension">
+              <div class="extension__info">
+                <img
+                  class="extension__logo"
+                  src="./assets/images/logo-devlens.svg"
+                />
+                <div class="extension__text">
+                  <p class="extension__name">DevLens</p>
+                  <p class="extension__desc">
+                    Quickly inspect page layouts and visualize element
+                    boundaries.
+                  </p>
+                </div>
+              </div>
+              <div class="extension__controls">
+                <button class="extension__remove-btn">Remove</button>
+                <button class="extension__switch">
+                  <span class="extension__switch-toggle"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
+            <div class="extensions__extension"></div>
           </div>
         </div>
-
-        <div class="extension__card"></div>
       </section>
     </main>
 

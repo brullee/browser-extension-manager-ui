@@ -1,11 +1,11 @@
 @font-face {
   font-family: "NotoSans";
   src: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf");
-  font-weight: 400 700;
+  font-weight: 300 700;
 }
 
 :root {
-  --text-color: hsl(227, 75%, 14%);
+  --neutral900: hsl(227, 75%, 14%);
   --neutral800: hsl(226, 25%, 17%);
   --neutral700: hsl(225, 23%, 24%);
   --neutral600: hsl(226, 11%, 37%);
@@ -29,26 +29,28 @@
 
 body {
   height: 100vh;
-  padding: 2em;
-  padding-top: 3em;
-  /* width: 80vw; */
-  max-width: 90em;
   margin: 0 auto;
-  /* padding: 3em;  */
-  /* make this dynamic later */
   background-image: var(--dark-gradient);
 }
 
 header {
+  padding: 2em;
+}
+
+.header__content {
   padding: 0.8em;
   border-radius: 1em;
-  /* width: 80vw; */
   /* make this dynamic later */
-  margin: 0em auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--neutral800);
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -65,14 +67,14 @@ header {
 }
 
 .logo__text {
-  height: 2.5em;
+  height: 2.6em;
   width: 8.75em;
   background-position: -2.5625em 0;
   filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(4874%)
     hue-rotate(173deg) brightness(100%) contrast(100%); /* make this change in JS*/
 }
 
-.theme-button {
+.theme-btn {
   height: 3.5em;
   width: 3.5em;
   border: 0;
@@ -84,16 +86,11 @@ header {
   background-color: var(--neutral700); /* make this change in JS*/
 }
 
-.theme-button:hover {
+.theme-btn:hover {
   background-color: var(--neutral600); /* make this change in JS*/
 }
 
-.extensions {
-  margin-top: 50px;
-}
-
 .filter-bar {
-  /* width: 80vw; */
   margin: 0 auto;
   /* make these dynamic later */
   display: flex;
@@ -128,4 +125,109 @@ header {
   border-color: var(--red500);
   background-color: var(--red500);
   color: var(--neutral900);
+}
+
+.extensions {
+  padding: 0 2em;
+  padding-top: 2em;
+}
+
+.extensions__content {
+  /* margin: 0 auto;  */
+  padding-bottom: 4em;
+}
+
+.extensions__grid {
+  margin-top: 2em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.extensions__extension {
+  border-radius: 1em;
+  padding: 1em;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--neutral800);
+  border: 1px solid var(--neutral600);
+}
+
+.extension__info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.extension__logo {
+  margin: 0 1em 1em 0;
+}
+
+.extension__name {
+  padding-bottom: 4px;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--neutral0);
+}
+
+.extension__desc {
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--neutral300);
+}
+
+.extension__controls {
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extension__remove-btn {
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: 400;
+  border: 1px solid var(--neutral600); /* make this change in JS*/
+  cursor: pointer;
+  color: var(--neutral0);
+  background-color: var(--neutral700);
+}
+
+.extension__remove-btn:hover,
+.extension__remove-btn:active {
+  border: 1px solid var(--red500);
+  color: var(--neutral900);
+  background-color: var(--red500);
+}
+
+.extension__switch {
+  padding: 1px;
+  width: 3em;
+  height: 1.6375em;
+  border-radius: 1em;
+  border: 0;
+  position: relative;
+  transition: background-color 0.5s;
+  background-color: var(--neutral600);
+}
+
+.extension__switch-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%) /*translateX(0%, -100%)*/;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 2em;
+  transition: transform 0.5s;
+  background-color: var(--neutral0);
+}
+
+.extension__switch:active {
+  background-color: var(--red500);
+}
+.extension__switch-toggle:active {
+  transform: translateY(-50%) translateX(0%);
 }
