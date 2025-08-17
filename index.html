@@ -16,27 +16,31 @@
   </head>
   <body>
     <header>
-      <img />
-      <p>Extensions</p>
-      <button><i></i></button>
+      <div class="logo">
+        <div class="logo logo__icon"></div>
+        <div class="logo logo__text"></div>
+      </div>
+      <button class="theme-button">
+        <!-- make this change in JS -->
+        <img src="assets/images/icon-sun.svg" />
+      </button>
     </header>
     <main>
-      <div class="filter-buttons">
-        <h1>Extensions List</h1>
-        <button>All</button>
-        <button>Active</button>
-        <button>Inactive</button>
-      </div>
-      <section></section>
-    </main>
-    <footer>
-      <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-    </footer>
-    <!-- Extensions List All Active Inactive
+      <section class="extensions">
+        <div class="filter-bar">
+          <h1 class="filter__title">Extensions List</h1>
+          <div class="buttons-container">
+            <button class="filter__btn active--btn">All</button>
+            <button class="filter__btn">Active</button>
+            <button class="filter__btn">Inactive</button>
+          </div>
+        </div>
 
+        <div class="extension__card"></div>
+      </section>
+    </main>
+
+    <!--
     DevLens Quickly inspect page layouts and visualize element boundaries.
     Remove StyleSpy Instantly analyze and copy CSS from any webpage element.
     Remove SpeedBoost Optimizes browser resource usage to accelerate page
