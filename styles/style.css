@@ -23,6 +23,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 16px;
   font-family: "NotoSans", sans-serif;
   box-sizing: border-box;
 }
@@ -31,6 +32,7 @@ body {
   height: 100vh;
   margin: 0 auto;
   background-image: var(--dark-gradient);
+  background-attachment: fixed;
 }
 
 header {
@@ -49,7 +51,7 @@ header {
 
 .wrapper {
   width: 80%;
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -83,6 +85,7 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.2s;
   background-color: var(--neutral700); /* make this change in JS*/
 }
 
@@ -99,29 +102,32 @@ header {
 }
 
 .filter__title {
-  /* font-size: 32px; */
+  font-size: 2em;
   font-weight: 700;
   color: var(--neutral0); /* make this change in JS*/
 }
 
 .filter__btn {
   padding: 0.5em 1em;
-  margin: 0 0.3em;
   border-radius: 2em;
   font-size: 1.2em;
   border: 1px solid var(--neutral600); /* make this change in JS*/
   cursor: pointer;
-
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   color: var(--neutral0);
   background-color: var(--neutral700);
+}
+
+.filter__btn.filter__active {
+  margin: 0 0.3em;
 }
 
 .filter__btn:hover {
   background-color: var(--neutral600);
 }
 
-.active--btn,
-.active--btn:hover {
+.btn--selected,
+.btn--selected:hover {
   border-color: var(--red500);
   background-color: var(--red500);
   color: var(--neutral900);
@@ -190,6 +196,7 @@ header {
   border-radius: 2em;
   font-size: 1em;
   font-weight: 400;
+  transition: background-color 0.4s, border-color 0.4s, color 0.4s;
   border: 1px solid var(--neutral600); /* make this change in JS*/
   cursor: pointer;
   color: var(--neutral0);
@@ -205,29 +212,32 @@ header {
 
 .extension__switch {
   padding: 1px;
-  width: 3em;
-  height: 1.6375em;
+  width: 2.8em;
+  height: 1.5em;
   border-radius: 1em;
   border: 0;
-  position: relative;
   transition: background-color 0.5s;
+  position: relative;
+  cursor: pointer;
   background-color: var(--neutral600);
 }
 
 .extension__switch-toggle {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-100%) /*translateX(0%, -100%)*/;
-  width: 1.4em;
-  height: 1.4em;
+  top: 0.2em;
+  left: 0.2em;
+  width: 1.1em;
+  height: 1.1em;
   border-radius: 2em;
-  transition: transform 0.5s;
+  transition: left 0.3s;
+  pointer-events: none;
   background-color: var(--neutral0);
 }
 
-.extension__switch:active {
+.extension__switch.toggle--on {
   background-color: var(--red500);
 }
-.extension__switch-toggle:active {
-  transform: translateY(-50%) translateX(0%);
+
+.extension__switch.toggle--on .extension__switch-toggle {
+  left: 1.5em;
 }

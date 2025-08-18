@@ -33,63 +33,33 @@
           <div class="filter-bar">
             <h1 class="filter__title">Extensions List</h1>
             <div class="buttons-container">
-              <button class="filter__btn active--btn">All</button>
-              <button class="filter__btn">Active</button>
-              <button class="filter__btn">Inactive</button>
+              <button class="filter__btn filter__all btn--selected">All</button>
+              <button class="filter__btn filter__active">Active</button>
+              <button class="filter__btn filter__inactive">Inactive</button>
             </div>
           </div>
-          <div class="extensions__grid">
-            <div class="extensions__extension">
-              <div class="extension__info">
-                <img
-                  class="extension__logo"
-                  src="./assets/images/logo-devlens.svg"
-                />
-                <div class="extension__text">
-                  <p class="extension__name">DevLens</p>
-                  <p class="extension__desc">
-                    Quickly inspect page layouts and visualize element
-                    boundaries.
-                  </p>
+          <div class="extensions__grid" id="extensions-list">
+            <template id="extension-template">
+              <div class="extensions__extension">
+                <div class="extension__info">
+                  <img class="extension__logo" src="" alt="Extension Logo" />
+                  <div class="extension__text">
+                    <p class="extension__name"></p>
+                    <p class="extension__desc"></p>
+                  </div>
+                </div>
+                <div class="extension__controls">
+                  <button class="extension__remove-btn">Remove</button>
+                  <button class="extension__switch">
+                    <span class="extension__switch-toggle"></span>
+                  </button>
                 </div>
               </div>
-              <div class="extension__controls">
-                <button class="extension__remove-btn">Remove</button>
-                <button class="extension__switch">
-                  <span class="extension__switch-toggle"></span>
-                </button>
-              </div>
-            </div>
-
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
-            <div class="extensions__extension"></div>
+            </template>
           </div>
         </div>
       </section>
     </main>
-
-    <!--
-    DevLens Quickly inspect page layouts and visualize element boundaries.
-    Remove StyleSpy Instantly analyze and copy CSS from any webpage element.
-    Remove SpeedBoost Optimizes browser resource usage to accelerate page
-    loading. Remove JSONWizard Formats, validates, and prettifies JSON responses
-    in-browser. Remove TabMaster Pro Organizes browser tabs into groups and
-    sessions. Remove ViewportBuddy Simulates various screen resolutions directly
-    within the browser. Remove Markup Notes Enables annotation and notes
-    directly onto webpages for collaborative debugging. Remove GridGuides
-    Overlay customizable grids and alignment guides on any webpage. Remove
-    Palette Picker Instantly extracts color palettes from any webpage. Remove
-    LinkChecker Scans and highlights broken links on any page. Remove DOM
-    Snapshot Capture and export DOM structures quickly. Remove ConsolePlus
-    Enhanced developer console with advanced filtering and logging. Remove -->
+    <script src="./javascript/script.js"></script>
   </body>
 </html>
