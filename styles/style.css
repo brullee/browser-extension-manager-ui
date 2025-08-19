@@ -20,12 +20,33 @@
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
+[data-theme="light"] {
+  --neutral900: hsl(227, 75%, 14%);
+  --neutral800: hsl(226, 25%, 17%);
+  --neutral700: hsl(225, 23%, 24%);
+  --neutral600: hsl(226, 11%, 37%);
+  --neutral300: hsl(0, 0%, 78%);
+  --neutral200: hsl(217, 61%, 90%);
+  --neutral100: hsl(0, 0%, 93%);
+  --neutral0: hsl(200, 60%, 99%);
+  --red400: hsl(3, 86%, 64%);
+  --red500: hsl(3, 71%, 56%);
+  --red700: hsl(3, 77%, 44%);
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
   font-size: 16px;
   font-family: "NotoSans", sans-serif;
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px solid var(--red400);
+  outline-offset: 2px;
 }
 
 body {
@@ -196,7 +217,7 @@ header {
   border-radius: 2em;
   font-size: 1em;
   font-weight: 400;
-  transition: background-color 0.4s, border-color 0.4s, color 0.4s;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   border: 1px solid var(--neutral600); /* make this change in JS*/
   cursor: pointer;
   color: var(--neutral0);
@@ -240,4 +261,8 @@ header {
 
 .extension__switch.toggle--on .extension__switch-toggle {
   left: 1.5em;
+}
+
+.hide--extension {
+  display: none;
 }
