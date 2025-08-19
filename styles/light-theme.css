@@ -1,0 +1,103 @@
+:focus-visible {
+  outline: 2px solid var(--red700);
+}
+
+body {
+  background-image: var(--light-gradient);
+}
+
+.header__content {
+  background-color: var(--neutral0);
+  border: 1px solid var(--neutral200);
+  box-shadow: 0px 1px 5px var(--neutral200);
+}
+
+.logo__icon {
+  filter: none;
+}
+
+.logo__text {
+  filter: none;
+}
+
+.theme-btn {
+  background-color: var(--neutral100);
+}
+
+.theme-btn:hover {
+  background-color: var(--neutral300);
+}
+
+.filter__title {
+  color: var(--neutral900);
+}
+
+.filter__btn {
+  box-shadow: 0px 0px 5px var(--neutral200);
+  border: 1px solid var(--neutral200);
+  color: var(--neutral900);
+  background-color: var(--neutral0);
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.filter__btn:hover {
+  background-color: var(--neutral0);
+  opacity: 0.6;
+}
+
+.btn--selected {
+  border-color: var(--red700);
+  background-color: var(--red700);
+  color: var(--neutral0);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn--selected:hover {
+  opacity: 1;
+  border-color: var(--red500);
+  background-color: var(--red500);
+}
+
+.extensions__extension {
+  box-shadow: 0px 0px 3px var(--neutral200);
+  background-color: var(--neutral0);
+  border: 1px solid var(--neutral200);
+}
+
+.extension__name {
+  color: var(--neutral900);
+}
+
+.extension__desc {
+  color: var(--neutral600);
+}
+
+.extension__remove-btn {
+  border: 1px solid var(--neutral300);
+  color: var(--neutral900);
+  background-color: var(--neutral0);
+}
+
+.extension__remove-btn:hover {
+  border: 1px solid var(--red500);
+  color: var(--neutral0);
+  background-color: var(--red500);
+}
+
+.extension__remove-btn:active {
+  background-color: var(--red700);
+  border: 1px solid var(--red700);
+  color: var(--neutral0);
+}
+
+.extension__switch {
+  background-color: var(--neutral300);
+}
+
+.extension__switch.toggle--on {
+  background-color: var(--red500);
+}
+
+.extension__switch.toggle--on:hover {
+  background-color: var(--red700);
+}

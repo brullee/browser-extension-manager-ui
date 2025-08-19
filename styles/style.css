@@ -1,7 +1,7 @@
 @font-face {
   font-family: "NotoSans";
   src: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf");
-  font-weight: 300 700;
+  font-weight: 400 700;
 }
 
 :root {
@@ -16,24 +16,12 @@
   --red400: hsl(3, 86%, 64%);
   --red500: hsl(3, 71%, 56%);
   --red700: hsl(3, 77%, 44%);
-  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
-}
-
-[data-theme="light"] {
-  --neutral900: hsl(227, 75%, 14%);
-  --neutral800: hsl(226, 25%, 17%);
-  --neutral700: hsl(225, 23%, 24%);
-  --neutral600: hsl(226, 11%, 37%);
-  --neutral300: hsl(0, 0%, 78%);
-  --neutral200: hsl(217, 61%, 90%);
-  --neutral100: hsl(0, 0%, 93%);
-  --neutral0: hsl(200, 60%, 99%);
-  --red400: hsl(3, 86%, 64%);
-  --red500: hsl(3, 71%, 56%);
-  --red700: hsl(3, 77%, 44%);
   --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
-  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --logo-icon-filter: brightness(0) saturate(100%) invert(39%) sepia(45%)
+    saturate(1148%) hue-rotate(319deg) brightness(111%) contrast(90%);
+  --logo-text-filter: brightness(0) saturate(100%) invert(100%) sepia(2%)
+    saturate(4874%) hue-rotate(173deg) brightness(100%) contrast(100%);
 }
 
 * {
@@ -44,7 +32,7 @@
   box-sizing: border-box;
 }
 
-*:focus {
+:focus-visible {
   outline: 2px solid var(--red400);
   outline-offset: 2px;
 }
@@ -72,7 +60,7 @@ header {
 
 .wrapper {
   width: 80%;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
@@ -85,21 +73,19 @@ header {
 .logo__icon {
   width: 2.6em;
   height: 2.6em;
-  filter: brightness(0) saturate(100%) invert(39%) sepia(45%) saturate(1148%)
-    hue-rotate(319deg) brightness(111%) contrast(90%); /* make this change in JS*/
+  filter: var(--logo-icon-filter);
 }
 
 .logo__text {
   height: 2.6em;
   width: 8.75em;
   background-position: -2.5625em 0;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(4874%)
-    hue-rotate(173deg) brightness(100%) contrast(100%); /* make this change in JS*/
+  filter: var(--logo-text-filter);
 }
 
 .theme-btn {
-  height: 3.5em;
-  width: 3.5em;
+  height: 3em;
+  width: 3em;
   border: 0;
   border-radius: 0.7em;
   display: flex;
@@ -107,11 +93,11 @@ header {
   align-items: center;
   cursor: pointer;
   transition: background-color 0.2s;
-  background-color: var(--neutral700); /* make this change in JS*/
+  background-color: var(--neutral700);
 }
 
 .theme-btn:hover {
-  background-color: var(--neutral600); /* make this change in JS*/
+  background-color: var(--neutral600);
 }
 
 .filter-bar {
@@ -125,14 +111,14 @@ header {
 .filter__title {
   font-size: 2em;
   font-weight: 700;
-  color: var(--neutral0); /* make this change in JS*/
+  color: var(--neutral0);
 }
 
 .filter__btn {
   padding: 0.5em 1em;
   border-radius: 2em;
   font-size: 1.2em;
-  border: 1px solid var(--neutral600); /* make this change in JS*/
+  border: 1px solid var(--neutral600);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   color: var(--neutral0);
@@ -147,11 +133,15 @@ header {
   background-color: var(--neutral600);
 }
 
-.btn--selected,
+.btn--selected {
+  border-color: var(--red400);
+  background-color: var(--red400);
+  color: var(--neutral900);
+}
+
 .btn--selected:hover {
   border-color: var(--red500);
   background-color: var(--red500);
-  color: var(--neutral900);
 }
 
 .extensions {
@@ -200,13 +190,13 @@ header {
 }
 
 .extension__desc {
-  font-size: 1em;
-  font-weight: 300;
+  font-size: 0.9em;
+  font-weight: 400;
   color: var(--neutral300);
 }
 
 .extension__controls {
-  margin-top: 3em;
+  margin-top: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,17 +208,21 @@ header {
   font-size: 1em;
   font-weight: 400;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  border: 1px solid var(--neutral600); /* make this change in JS*/
+  border: 1px solid var(--neutral600);
   cursor: pointer;
   color: var(--neutral0);
-  background-color: var(--neutral700);
+  background-color: var(--neutral800);
 }
 
-.extension__remove-btn:hover,
+.extension__remove-btn:hover {
+  border: 1px solid var(--red400);
+  color: var(--neutral900);
+  background-color: var(--red400);
+}
 .extension__remove-btn:active {
+  background-color: var(--red500);
   border: 1px solid var(--red500);
   color: var(--neutral900);
-  background-color: var(--red500);
 }
 
 .extension__switch {
@@ -237,7 +231,7 @@ header {
   height: 1.5em;
   border-radius: 1em;
   border: 0;
-  transition: background-color 0.5s;
+  transition: background-color 0.4s;
   position: relative;
   cursor: pointer;
   background-color: var(--neutral600);
@@ -256,6 +250,10 @@ header {
 }
 
 .extension__switch.toggle--on {
+  background-color: var(--red400);
+}
+
+.extension__switch.toggle--on:hover {
   background-color: var(--red500);
 }
 

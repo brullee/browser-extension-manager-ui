@@ -6,6 +6,13 @@
 
     <link rel="stylesheet" href="styles/style.css" />
     <link
+      id="light-theme"
+      rel="stylesheet"
+      href="styles/light-theme.css"
+      disabled
+    />
+
+    <link
       rel="icon"
       type="image/png"
       sizes="32x32"
@@ -21,9 +28,8 @@
           <div class="logo logo__icon"></div>
           <div class="logo logo__text"></div>
         </div>
-        <button class="theme-btn">
-          <!-- make this change in JS -->
-          <img src="assets/images/icon-sun.svg" />
+        <button class="theme-btn" onclick="toggleTheme()">
+          <img id="theme-icon" src="assets/images/icon-sun.svg" />
         </button>
       </div>
     </header>

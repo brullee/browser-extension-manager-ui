@@ -1,6 +1,8 @@
 const handleFilter = document.querySelectorAll(".filter__btn");
 const container = document.getElementById("extensions-list");
 const template = document.getElementById("extension-template");
+const lightTheme = document.getElementById("light-theme");
+const themeIcon = document.getElementById("theme-icon");
 
 fetch("../data.json")
   .then((response) => response.json())
@@ -70,4 +72,12 @@ function filterExtensions(filterType) {
         : extensionElement.classList.add("hide--extension");
     }
   });
+}
+
+function toggleTheme() {
+  lightTheme.disabled = !lightTheme.disabled;
+
+  themeIcon.src = themeIcon.src.includes("icon-sun.svg")
+    ? "assets/images/icon-moon.svg"
+    : "assets/images/icon-sun.svg";
 }
