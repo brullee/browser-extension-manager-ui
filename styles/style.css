@@ -33,7 +33,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid var(--red400);
+  outline: 3px solid var(--red400);
   outline-offset: 2px;
 }
 
@@ -51,7 +51,6 @@ header {
 .header__content {
   padding: 0.8em;
   border-radius: 1em;
-  /* make this dynamic later */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,15 +58,18 @@ header {
 }
 
 .wrapper {
-  width: 80%;
   max-width: 1150px;
   margin: 0 auto;
 }
 
 .logo {
+  display: flex;
+}
+
+.logo__icon,
+.logo__text {
   background-image: url(../assets/images/logo.svg);
   background-repeat: no-repeat;
-  display: flex;
 }
 
 .logo__icon {
@@ -79,7 +81,7 @@ header {
 .logo__text {
   height: 2.6em;
   width: 8.75em;
-  background-position: -2.5625em 0;
+  background-position: -2.6em 0;
   filter: var(--logo-text-filter);
 }
 
@@ -102,7 +104,6 @@ header {
 
 .filter-bar {
   margin: 0 auto;
-  /* make these dynamic later */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,9 +116,9 @@ header {
 }
 
 .filter__btn {
-  padding: 0.5em 1em;
+  padding: 0.5em 1.1em;
   border-radius: 2em;
-  font-size: 1.2em;
+  font-size: 1.15em;
   border: 1px solid var(--neutral600);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -150,7 +151,6 @@ header {
 }
 
 .extensions__content {
-  /* margin: 0 auto;  */
   padding-bottom: 4em;
 }
 
@@ -160,6 +160,38 @@ header {
   gap: 1em;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 930px) {
+  .extensions__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .extensions__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .filter-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header {
+    padding: 1em;
+  }
+  .extensions {
+    padding: 0 1em;
+    padding-top: 1em;
+  }
+  .filter__title {
+    font-size: 2.4em;
+    margin-bottom: 0.5em;
+  }
 }
 
 .extensions__extension {
@@ -203,9 +235,9 @@ header {
 }
 
 .extension__remove-btn {
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
   border-radius: 2em;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 400;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   border: 1px solid var(--neutral600);
