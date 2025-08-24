@@ -37,13 +37,17 @@
   outline-offset: 2px;
 }
 
-body {
+html {
   min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
   margin: 0;
   background-image: var(--dark-gradient);
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 header {
