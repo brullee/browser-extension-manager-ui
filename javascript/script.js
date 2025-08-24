@@ -1,8 +1,6 @@
 const handleFilter = document.querySelectorAll(".filter__btn");
 const container = document.getElementById("extensions-list");
 const template = document.getElementById("extension-template");
-const lightTheme = document.getElementById("light-theme");
-const themeIcon = document.getElementById("theme-icon");
 
 fetch("../data.json")
   .then((response) => response.json())
@@ -22,12 +20,32 @@ fetch("../data.json")
         extensionElement
           .querySelector(".extension__switch")
           .classList.add("toggle--on");
+        extensionElement
+          .querySelector(".extension__switch")
+          .setAttribute("aria-checked", "true");
+        extensionElement
+          .querySelector(".extension__switch")
+          .setAttribute("aria-label", "Disable Extension");
+      } else {
+        extensionElement
+          .querySelector(".extension__switch")
+          .setAttribute("aria-checked", "false");
+        extensionElement
+          .querySelector(".extension__switch")
+          .setAttribute("aria-label", "Enable Extension");
       }
 
       extensionElement
         .querySelector(".extension__switch")
         .addEventListener("click", (event) => {
-          event.currentTarget.classList.toggle("toggle--on");
+          const button = event.currentTarget;
+          const isOn = button.classList.toggle("toggle--on");
+
+          button.setAttribute("aria-checked", String(isOn));
+          button.setAttribute(
+            "aria-label",
+            isOn ? "Disable Extension" : "Enable Extension"
+          );
         });
       removeElement
         .querySelector(".extension__remove-btn")
@@ -75,9 +93,17 @@ function filterExtensions(filterType) {
 }
 
 function toggleTheme() {
-  lightTheme.disabled = !lightTheme.disabled;
+  const lightTheme = document.getElementById("light-theme");
+  const themeBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
 
-  themeIcon.src = themeIcon.src.includes("icon-sun.svg")
-    ? "assets/images/icon-moon.svg"
-    : "assets/images/icon-sun.svg";
+  if (lightTheme.disabled === false) {
+    lightTheme.disabled = true;
+    themeBtn.setAttribute("aria-label", "Switch to light theme");
+    themeIcon.src = "assets/images/icon-sun.svg";
+  } else {
+    lightTheme.disabled = false;
+    themeBtn.setAttribute("aria-label", "Switch to dark theme");
+    themeIcon.src = "assets/images/icon-moon.svg";
+  }
 }

@@ -24,47 +24,80 @@
   <body>
     <header>
       <div class="header__content wrapper">
-        <div class="logo">
+        <div class="logo" aria-label="Extensions Logo">
           <div class="logo__icon"></div>
           <div class="logo__text"></div>
         </div>
-        <button class="theme-btn" onclick="toggleTheme()">
-          <img id="theme-icon" src="assets/images/icon-sun.svg" />
+        <button
+          id="theme-toggle"
+          type="button"
+          class="theme-btn"
+          onclick="toggleTheme()"
+          aria-label="Switch to light theme"
+        >
+          <img id="theme-icon" src="assets/images/icon-sun.svg" alt="" />
         </button>
       </div>
     </header>
-    <main>
-      <section class="extensions">
-        <div class="extensions__content wrapper">
-          <div class="filter-bar">
-            <h1 class="filter__title">Extensions List</h1>
-            <div class="filter__buttons-container">
-              <button class="filter__btn filter__all btn--selected">All</button>
-              <button class="filter__btn filter__active">Active</button>
-              <button class="filter__btn filter__inactive">Inactive</button>
-            </div>
-          </div>
-          <div class="extensions__grid" id="extensions-list">
-            <template id="extension-template">
-              <div class="extensions__extension">
-                <div class="extension__info">
-                  <img class="extension__logo" src="" alt="Extension Logo" />
-                  <div class="extension__text">
-                    <p class="extension__name"></p>
-                    <p class="extension__desc"></p>
-                  </div>
-                </div>
-                <div class="extension__controls">
-                  <button class="extension__remove-btn">Remove</button>
-                  <button class="extension__switch">
-                    <span class="extension__switch-toggle"></span>
-                  </button>
-                </div>
-              </div>
-            </template>
+    <main class="extensions">
+      <div class="extensions__content wrapper">
+        <div class="filter-bar">
+          <h1 id="filter-title" class="filter__title">Extensions List</h1>
+          <div
+            class="filter__buttons-container"
+            aria-labelledby="filter-title"
+            role="group"
+          >
+            <button
+              class="filter__btn filter__all btn--selected"
+              aria-label="Show All Extensions"
+            >
+              All
+            </button>
+            <button
+              class="filter__btn filter__active"
+              aria-label="Show All Active"
+            >
+              Active
+            </button>
+            <button
+              class="filter__btn filter__inactive"
+              aria-label="Show All Inactive"
+            >
+              Inactive
+            </button>
           </div>
         </div>
-      </section>
+        <ul class="extensions__grid" id="extensions-list" role="list">
+          <template id="extension-template">
+            <li class="extensions__extension" role="listitem">
+              <div class="extension__info">
+                <img class="extension__logo" alt="" />
+                <div class="extension__text">
+                  <h4 class="extension__name"></h4>
+                  <p class="extension__desc"></p>
+                </div>
+              </div>
+              <div class="extension__controls">
+                <button
+                  class="extension__remove-btn"
+                  aria-label="Remove Extension Button"
+                >
+                  Remove
+                </button>
+                <button
+                  role="switch"
+                  class="extension__switch"
+                  aria-checked=""
+                  aria-label=""
+                >
+                  <span class="extension__switch-toggle"></span>
+                </button>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </div>
     </main>
     <script src="./javascript/script.js"></script>
   </body>

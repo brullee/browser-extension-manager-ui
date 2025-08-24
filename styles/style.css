@@ -38,10 +38,12 @@
 }
 
 body {
-  height: 100vh;
-  margin: 0 auto;
+  min-height: 100%;
+  margin: 0;
   background-image: var(--dark-gradient);
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -295,4 +297,7 @@ header {
 
 .hide--extension {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
 }
