@@ -103,7 +103,7 @@ function toggleTheme() {
     lightTheme.disabled = true;
     themeBtn.setAttribute("aria-label", "Switch to light theme");
     themeIcon.src = "assets/images/icon-sun.svg";
-    logoIconTheme.setAttribute("fill", "hsl(3, 71%, 56%)");
+    logoIconTheme.setAttribute("fill", "hsl(3, 86%, 64%)");
     logoTextTheme.setAttribute("fill", "hsl(200, 60%, 99%)");
   } else {
     lightTheme.disabled = false;
