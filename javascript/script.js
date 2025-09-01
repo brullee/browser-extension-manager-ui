@@ -96,14 +96,20 @@ function toggleTheme() {
   const lightTheme = document.getElementById("light-theme");
   const themeBtn = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
+  const logoIconTheme = document.getElementById("logo-icon");
+  const logoTextTheme = document.getElementById("logo-text");
 
   if (lightTheme.disabled === false) {
     lightTheme.disabled = true;
     themeBtn.setAttribute("aria-label", "Switch to light theme");
     themeIcon.src = "assets/images/icon-sun.svg";
+    logoIconTheme.setAttribute("fill", "hsl(3, 71%, 56%)");
+    logoTextTheme.setAttribute("fill", "hsl(200, 60%, 99%)");
   } else {
     lightTheme.disabled = false;
     themeBtn.setAttribute("aria-label", "Switch to dark theme");
     themeIcon.src = "assets/images/icon-moon.svg";
+    logoIconTheme.setAttribute("fill", "hsl(3, 77%, 44%)");
+    logoTextTheme.setAttribute("fill", "hsl(227, 75%, 14%)");
   }
 }

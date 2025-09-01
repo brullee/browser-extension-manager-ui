@@ -12,14 +12,6 @@ body {
   box-shadow: 0px 1px 5px var(--neutral200);
 }
 
-.logo__icon {
-  filter: none;
-}
-
-.logo__text {
-  filter: none;
-}
-
 .theme-btn {
   background-color: var(--neutral100);
 }

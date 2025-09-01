@@ -18,10 +18,6 @@
   --red700: hsl(3, 77%, 44%);
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
   --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
-  --logo-icon-filter: brightness(0) saturate(100%) invert(39%) sepia(45%)
-    saturate(1148%) hue-rotate(319deg) brightness(111%) contrast(90%);
-  --logo-text-filter: brightness(0) saturate(100%) invert(100%) sepia(2%)
-    saturate(4874%) hue-rotate(173deg) brightness(100%) contrast(100%);
 }
 
 * {
@@ -45,9 +41,6 @@ body {
   min-height: 100vh;
   margin: 0;
   background-image: var(--dark-gradient);
-  /* background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 header {
@@ -64,31 +57,12 @@ header {
 }
 
 .wrapper {
-  max-width: 1150px;
+  max-width: 71.875rem;
   margin: 0 auto;
 }
 
 .logo {
   display: flex;
-}
-
-.logo__icon,
-.logo__text {
-  background-image: url(../assets/images/logo.svg);
-  background-repeat: no-repeat;
-}
-
-.logo__icon {
-  width: 2.6em;
-  height: 2.6em;
-  filter: var(--logo-icon-filter);
-}
-
-.logo__text {
-  height: 2.6em;
-  width: 8.75em;
-  background-position: -2.6em 0;
-  filter: var(--logo-text-filter);
 }
 
 .theme-btn {
@@ -164,21 +138,18 @@ header {
   margin-top: 2em;
   display: grid;
   gap: 1em;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 @media only screen and (max-width: 930px) {
   .extensions__grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 700px) {
   .extensions__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media only screen and (max-width: 640px) {
